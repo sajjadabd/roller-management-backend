@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+use \App\Http\Controllers\MenuController;
+
+
+Route::get('/menu/getall', [MenuController::class , 'getall']);
+
+
+Route::post('/menu/create', [MenuController::class , 'create']);
+
+
+
 Route::get('/', function () {
     return [
         'message' => 'welcome to laravel'
