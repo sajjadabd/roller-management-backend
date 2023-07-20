@@ -33,7 +33,7 @@ class MenuController extends Controller
         $validated = $request->validate([
             'parent' => 'required|max:25',
             'title' => 'required|max:255',
-            'path' => 'required|max:255',
+            'path' => 'max:255',
         ]);
 
         if($validated['parent'] == 0) {
