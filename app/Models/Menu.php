@@ -14,12 +14,12 @@ class Menu extends Model
     protected $guarded = [];  
 
 
-    public function parent(): BelongsTo
+    public function parent()
     {
         return $this->belongsTo(Menu::class, 'parent');
     }
 
-    public function subcategories(): HasMany
+    public function children()
     {
         return $this->hasMany(Menu::class , 'parent' , 'id');
     }
