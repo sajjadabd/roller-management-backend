@@ -19,9 +19,9 @@ use \App\Http\Controllers\MenuController;
 
 Route::get('/menu/getall', [MenuController::class , 'getall']);
 
-
 Route::post('/menu/create', [MenuController::class , 'create']);
 
+Route::post('/menu/delete', [MenuController::class , 'delete']);
 
 
 Route::get('/', function () {

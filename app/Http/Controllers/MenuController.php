@@ -15,6 +15,19 @@ class MenuController extends Controller
     }
 
 
+    public function delete(Request $request) {
+
+        $validated = $request->validate([
+            'array' => 'required',
+        ]);
+
+        error_log(implode( " , " , $validated['array'] ));
+
+        Menu::destroy($validated['array']);
+
+    }
+
+
     public function create(Request $request) {
 
         $validated = $request->validate([
