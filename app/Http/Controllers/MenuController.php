@@ -31,11 +31,13 @@ class MenuController extends Controller
     public function create(Request $request) {
 
         $validated = $request->validate([
+            'parent' => 'required|max:25',
             'title' => 'required|max:255',
             'path' => 'required|max:255',
         ]);
 
         return Menu::create([
+            'parent' => $validated['parent'],
             'title' => $validated['title'],
             'path' => $validated['path']
         ]);
