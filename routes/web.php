@@ -26,6 +26,6 @@ Route::post('/menu/delete', [MenuController::class , 'delete']);
 
 Route::get('/', function () {
     return [
-        'message' => 'welcome to laravel'
+        'message' => 'welcome to the server'
     ];
 });
