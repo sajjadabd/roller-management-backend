@@ -12,4 +12,15 @@ class Menu extends Model
     //protected $fillable = ['title'];
 
     protected $guarded = [];  
+
+
+    public function parent()
+    {
+        return $this->belongsTo(Menu::class, 'parent');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Menu::class , 'parent' , 'id');
+    }
 }

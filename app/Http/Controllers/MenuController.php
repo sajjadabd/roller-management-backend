@@ -11,7 +11,7 @@ use \App\Models\Menu;
 class MenuController extends Controller
 {
     public function getAll() {
-        return Menu::all();
+        return Menu::with('children')->get();
     }
 
 
@@ -31,14 +31,25 @@ class MenuController extends Controller
     public function create(Request $request) {
 
         $validated = $request->validate([
+            'parent' => 'required|max:25',
             'title' => 'required|max:255',
-            'path' => 'required|max:255',
+            'path' => 'max:255',
         ]);
 
-        return Menu::create([
+        if($validated['parent'] == 0) {
+            $validated['parent'] = null ;
+        }
+
+        $menu = Menu::create([
+            'parent' => $validated['parent'],
             'title' => $validated['title'],
             'path' => $validated['path']
         ]);
+
+        $menu->key = $menu->id;
+        $menu->save();
+
+        return $menu;
 
     }
 }
