@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('parent')->nullable();
             $table->foreign('parent')->references('id')->on('menus')->onDelete('cascade');
             $table->string('title');
+            $table->string('icon')->nullable();
             $table->string('path')->nullable();
             $table->timestamps();
         });
