@@ -8,8 +8,29 @@ use Illuminate\Http\Request;
 use \App\Models\Menu;
 
 
+/**
+ * @OA\Info(
+ *     title="My Menu API",
+ *     version="0.1"
+ * )
+ */
 class MenuController extends Controller
 {
+    /**
+     * @OA\Get(
+     *   path="/api/Menus",
+     *   tags={"Menus"},
+     *   summary="Get a list of users",
+     *   @OA\Response(
+     *     response=200,
+     *     description="Successful operation",
+     *   ),
+     *   @OA\Response(
+     *     response=400,
+     *     description="Bad Request",
+     *   ),
+     * )
+     */
     public function getAll() {
         return Menu::with('children')->get();
     }

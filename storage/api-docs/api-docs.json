@@ -1,0 +1,26 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My Menu API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/Menus": {
+            "get": {
+                "tags": [
+                    "Menus"
+                ],
+                "summary": "Get a list of users",
+                "operationId": "f9e6e49c705aae88706e343aaf520c7f",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        }
+    }
+}
