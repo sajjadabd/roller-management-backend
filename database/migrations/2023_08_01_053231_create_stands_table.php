@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('stands', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('stand_code')->nullable();
+            $table->unsignedBigInteger('top_roller')->nullable();
+            $table->unsignedBigInteger('bottom_roller')->nullable();
+            $table->float('center_distance', 8, 2); // total digits / decimal digits
+            $table->float('air_gap', 8, 2); // total digits / decimal digits
             $table->timestamps();
         });
     }
