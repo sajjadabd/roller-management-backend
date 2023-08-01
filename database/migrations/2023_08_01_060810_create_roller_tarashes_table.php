@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('roller_tarashes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('roller_id')->nullable();
+            $table->float('tarash_value', 8, 2); // total digits / decimal digits
+            $table->float('previous_diameter', 8, 2); // total digits / decimal digits
+            $table->float('new_diameter', 8, 2); // total digits / decimal digits
             $table->timestamps();
         });
     }

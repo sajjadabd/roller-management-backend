@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('calibr_changes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('roller_id')->nullable();
+            $table->smallInteger('from_calibr');
+            $table->smallInteger('to_calibr');
             $table->timestamps();
         });
     }
