@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('stand_changes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('stand_id')->nullable();
+            $table->enum('status', [
+                'ready' ,
+                'online', 
+                'offline' , 
+            ]);
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('roller_changes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('roller_id')->nullable();
             $table->enum('status', [
                 'raw' , 
                 //'waitingfortarash' , 
@@ -21,8 +22,7 @@ return new class extends Migration
                 'offline' , 
                 //'onstand'
             ]);
-
-            $table->timestamps();
+            $table->boolean('convertion');
         });
     }
 
