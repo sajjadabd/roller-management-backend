@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Roller extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];  
 }
