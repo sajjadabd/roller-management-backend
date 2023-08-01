@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('rollers', function (Blueprint $table) {
             $table->id();
+            //$table->unsignedBigInteger('stand_id')->nullable();
+            //$table->unsignedBigInteger('standtype_id')->nullable();
+            $table->enum('gender', ['male', 'female']);
+            $table->enum('type', ['section', 'barmill']);
+            $table->enum('position', ['roughing', 'intermadiate' , 'finishing']);
+            $table->float('diameter', 8, 2); // total digits / decimal digits
             $table->timestamps();
         });
     }
