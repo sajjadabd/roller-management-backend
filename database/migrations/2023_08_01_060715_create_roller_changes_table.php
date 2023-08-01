@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('roller_changes', function (Blueprint $table) {
             $table->id();
+            $table->enum('status', [
+                'raw' , 
+                //'waitingfortarash' , 
+                'ready' ,
+                'online', 
+                'offline' , 
+                //'onstand'
+            ]);
+
             $table->timestamps();
         });
     }
