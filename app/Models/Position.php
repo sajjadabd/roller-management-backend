@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 use \App\Models\Line;
 
-class Product extends Model
+class Position extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = [];  
 
     public function line() {
         return $this->belongsTo(Line::class, 'line_id');
