@@ -19,7 +19,9 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female']);
             $table->enum('type', ['section', 'barmill']);
             $table->enum('position', ['roughing', 'intermadiate' , 'finishing']);
+            $table->smallInteger('order_number');
             $table->float('diameter', 8, 2); // total digits / decimal digits
+            $table->float('width', 8, 2); // total digits / decimal digits
             $table->float('kg_per_tonag', 8, 2); // total digits / decimal digits
             $table->timestamps();
         });

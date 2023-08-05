@@ -10,4 +10,6 @@ class Line extends Model
     use HasFactory;
 
     protected $guarded = [];  
+
+    
 }

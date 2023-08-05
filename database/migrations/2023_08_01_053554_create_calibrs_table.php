@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('calibrs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('roller_id')->nullable();
+            $table->float('diameter', 8, 2); // total digits / decimal digits
+            $table->float('width', 8, 2); // total digits / decimal digits
             $table->unsignedBigInteger('tonag_karkard')->nullable();
             $table->timestamps();
         });
