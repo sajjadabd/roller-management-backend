@@ -28,6 +28,11 @@ Route::post('/rollers/create', [RollerController::class , 'create']);
 Route::post('/rollers/delete', [RollerController::class , 'delete']);
 
 
+Route::get('/roles/getall', [RoleController::class , 'getall']);
+Route::post('/roles/create', [RoleController::class , 'create']);
+Route::post('/roles/delete', [RoleController::class , 'delete']);
+
+
 
 Route::get('/', function () {
     return [
