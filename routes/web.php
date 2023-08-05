@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 use \App\Http\Controllers\MenuController;
 use \App\Http\Controllers\RollerController;
+use \App\Http\Controllers\RoleController;
 
 
 Route::get('/menu/getall', [MenuController::class , 'getall']);
