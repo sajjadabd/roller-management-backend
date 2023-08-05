@@ -61,7 +61,7 @@ class RollerController extends Controller
             }
         } 
 
-        $roller = Menu::create([
+        $roller = Roller::create([
             'roller_code' => $validated['rollCode'] ?? null ,
             'gender' => $validated['rollGender'] ?? null ,
             'type' => $validated['rollType'] ,
