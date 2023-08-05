@@ -14,7 +14,6 @@ class StandChange extends Model
     protected $guarded = [];  
 
 
-
     public function Stand()
     {
         return $this->belongsTo(Stand::class , 'stand_id' );
