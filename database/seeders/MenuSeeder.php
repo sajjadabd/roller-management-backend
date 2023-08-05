@@ -47,5 +47,28 @@ class MenuSeeder extends Seeder
             'title' => 'بارمیل' ,
             'path' => '/createroll/barmill'
         ]);
+
+
+
+        Menu::create([
+          'key' => 4 ,
+          'parent' => null ,
+          'title' => 'ایجاد استند' ,
+          'path' => ''
+      ]);
+
+      Menu::create([
+          'key' => 5 ,
+          'parent' => 4 ,
+          'title' => 'سکشن' ,
+          'path' => '/createstand/section'
+      ]);
+
+      Menu::create([
+          'key' => 6 ,
+          'parent' => 4 ,
+          'title' => 'بارمیل' ,
+          'path' => '/createstand/barmill'
+      ]);
     }
 }

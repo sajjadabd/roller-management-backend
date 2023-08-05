@@ -17,9 +17,25 @@ return new class extends Migration
             $table->unsignedBigInteger('roller_code')->nullable();
             //$table->unsignedBigInteger('stand_id')->nullable();
             //$table->unsignedBigInteger('standtype_id')->nullable();
+
+            
+            $table->unsignedBigInteger('hardness')->nullable();
+
+
+            $table->smallInteger('grade')->nullable(); // mixed of alphabets and numbers
+
+
             $table->enum('gender', ['male', 'female']);
-            $table->enum('type', ['section', 'barmill']);
+            //$table->enum('type', ['section', 'barmill']);
+
+            $table->enum('type', ['Due', 'Universal']);
+
+
             $table->enum('position', ['roughing', 'intermediate' , 'finishing']);
+
+            //$table->enum('position', ['reversible', 'milltrain' ]);
+
+
             $table->smallInteger('order_number')->nullable();
             $table->float('diameter', 8, 2); // total digits / decimal digits
             $table->float('width', 8, 2); // total digits / decimal digits
