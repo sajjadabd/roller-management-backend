@@ -19,6 +19,7 @@ use \App\Http\Controllers\RollerController;
 use \App\Http\Controllers\RoleController;
 use \App\Http\Controllers\UserController;
 
+use \App\Http\Controllers\AuthController;
 
 
 
@@ -42,7 +43,7 @@ Route::post('/users/create', [UserController::class , 'create']);
 Route::post('/users/delete', [UserController::class , 'delete']);
 
 
-
+Route::post('/users/checkauth', [AuthController::class , 'checkauth']);
 
 
 

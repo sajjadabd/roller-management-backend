@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \App\Models\User;
 
+use \App\Http\Controllers\AuthController;
+
+
 class AuthController extends Controller
 {
 
@@ -46,11 +49,42 @@ class AuthController extends Controller
 
         $user = User::where('username', $request->username)->first();
         $token = $user->createToken('authToken')->plainTextToken ;
-        
+
         $user->remember_token = $token ;
         $user->save();
 
         return response()->json(['token' => $token], 200);
+    }
+
+
+
+    public function checkauth(Request $request)
+    {
+
+        //var_dump($request);
+        //return $request;
+
+        $credentials = $request->validate([
+            'username' => 'string',
+            'password' => 'string',
+            'token' => 'string',
+        ]);
+
+
+        if ( 
+            Auth::attempt([
+                'username' => $credentials['username'], 
+                'password' => $credentials['password'] 
+            ])
+        ) {
+
+            return response()->json(['success' => true ]);
+
+        } else {
+           return response()->json(['success' => false ]);
+
+        }
+
     }
 
 

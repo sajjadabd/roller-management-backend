@@ -42,7 +42,7 @@ class MenuController extends Controller
             'array' => 'required',
         ]);
 
-        error_log(implode( " , " , $validated['array'] ));
+        //error_log(implode( " , " , $validated['array'] ));
 
         Menu::destroy($validated['array']);
 
