@@ -31,14 +31,15 @@ class MenuSeeder extends Seeder
             'key' => 1 ,
             'parent' => null ,
             'title' => 'ایجاد غلطک' ,
-            'path' => ''
+            'path' => '',
+            'icon' => 'SettingOutlined' ,
         ]);
 
         Menu::create([
             'key' => 2 ,
             'parent' => 1 ,
             'title' => 'سکشن' ,
-            'path' => '/createroll/section'
+            'path' => '/createroll/section',
         ]);
 
         Menu::create([
@@ -54,7 +55,8 @@ class MenuSeeder extends Seeder
           'key' => 4 ,
           'parent' => null ,
           'title' => 'ایجاد استند' ,
-          'path' => ''
+          'path' => '' ,
+          'icon' => 'SettingOutlined' ,
       ]);
 
       Menu::create([
