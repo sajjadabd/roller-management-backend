@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use \App\Models\Roller;
+use \App\Models\Calibr;
+
 
 class RollerController extends Controller
 {
@@ -70,8 +72,24 @@ class RollerController extends Controller
             'width' => $validated['rollWidth'] ,
         ]);
 
+
         $roller->key = $roller->id;
         $roller->save();
+
+        
+        for($i=0;$i<$validated['numberOfCalibres'];$i++) {
+
+            Calibr::create([
+                'roller_id' => $roller->id ,
+                'diameter' => $validated['rollDiameter'] ,
+                'width' => $validated['calibreWidth'] ,
+            ]);
+
+        }
+        
+
+
+        
 
         return $roller;
 

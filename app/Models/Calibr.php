@@ -14,6 +14,7 @@ class Calibr extends Model
     use HasFactory;
 
     protected $guarded = [];  
+    
 
     public function CalibrTarash() {
         return $this->hasMany(CalibrTarash::class , 'calibre_id' , 'id' );
