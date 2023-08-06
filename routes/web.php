@@ -19,7 +19,7 @@ use \App\Http\Controllers\RollerController;
 use \App\Http\Controllers\RoleController;
 use \App\Http\Controllers\UserController;
 
-use \App\Http\Controllers\AuthController;
+
 
 
 Route::get('/menu/getall', [MenuController::class , 'getAll']);
@@ -43,12 +43,6 @@ Route::post('/users/delete', [UserController::class , 'delete']);
 
 
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout']);
-});
-
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
 
 
 
